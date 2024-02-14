@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TblgruposSistemasController;
+use App\Http\Controllers\TblSolicitudesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('grupos', [TblgruposSistemasController::class, 'showGrupos']);
+// Mostrar los grupos registrados
+Route::get('/grupos', [TblgruposSistemasController::class, 'showGrupos']);
+
+// Asignar solicitud
+Route::get('/asignarSolicitud/{nombre_solicitante}/{paterno_solicitante}/{materno_solicitante}/{activo}/{fecha_solicitud}', [TblSolicitudesController::class, 'asignarSolicitud']);
