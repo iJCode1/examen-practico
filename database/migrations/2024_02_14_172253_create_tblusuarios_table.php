@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nombre', 100);
             $table->string('paterno', 100);
             $table->string('materno', 100);
-            $table->string('login', 250);
+            $table->string('login', 250)->unique();
             $table->string('password', 250);
             $table->integer('activo');
 

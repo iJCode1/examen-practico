@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('activo');
             $table->timestamp('fecha_solicitud');
 
+            $table->foreign('id_usuario_asignado')->references('id_usuario')->on('tblusuarios');
+
             $table->timestamps();
         });
     }
